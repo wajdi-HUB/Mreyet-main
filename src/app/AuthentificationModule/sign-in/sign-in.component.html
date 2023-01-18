@@ -1,0 +1,43 @@
+<div class="main">
+  <section class="module">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h4 class="font-alt">Connectez-Vous À Votre Compte </h4>
+          <div class="button-row">
+            <a  >Pas de compte ?</a>
+            <a class="text-link" routerLink='/authentification/signup' routerLinkActive='active'  > Créez-en un</a>
+      
+          </div>
+          <hr class="divider-w mb-10">
+          <div id="errorMsg" *ngIf="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{errorMessage}}
+            </div>
+          </div>
+          <div id="successMsg" *ngIf="successMessage">
+            <div class="alert alert-success" role="alert">
+              {{successMessage}}
+            </div>
+          </div>
+          <form class="form" (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+            <div class="form-group">
+              <input class="form-control" formControlName="username" id="username" type="text" name="username" placeholder="Nom d'utilisateur" />
+            </div>
+            <div class="form-group">
+              <input class="form-control" formControlName="password" id="password" type="password" name="password" placeholder="MOT DE PASSE" />
+            </div>
+            <div class="form-group">
+              
+              <button class="btn btn-block btn-round btn-b">Connexion</button>
+            </div>
+            <div class="form-group"><a class="text-link" routerLink='/authentification/request-reset-password' routerLinkActive='active' >Mot de passe oublié ?</a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+

@@ -1,0 +1,18 @@
+
+
+
+    <div class="main">
+      <section class="module">
+        <div class="container">
+          <div class="row">
+    
+            <div class="col-sm-8 col-sm-offset-2" *ngIf="CurrentState=='NotVerified'">
+              <h2 class="module-title font-alt">Erreur de vérification </h2>
+            </div> 
+            <div class="col-sm-8 col-sm-offset-2" *ngIf="CurrentState=='Verified'">
+              <h2 class="module-title font-alt">votre compte est vérifié maintenant</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>

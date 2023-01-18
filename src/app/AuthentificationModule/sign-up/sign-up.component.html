@@ -1,0 +1,71 @@
+<div class="main">
+
+  <section class="module">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-6 col-sm-offset-3">
+          <h4 class="font-alt">Créez Votre Compte</h4>
+          <hr class="divider-w mb-10">
+          <div id="errorMsg" *ngIf="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{errorMessage}}
+            </div>
+          </div>
+          <div id="successMsg" *ngIf="successMessage">
+            <div class="alert alert-success" role="alert">
+              {{successMessage}}
+            </div>
+          </div>
+          <div id="errorMsg" *ngIf="errorInputMessage">
+            <div class="alert alert-danger" role="alert">
+              {{errorInputMessage}}
+            </div>
+          </div>
+          <form class="was-validated" (ngSubmit)="onRegister()" name="registerForm" [formGroup]="registerForm" >
+            <div class="form-group is-invalid" >
+              <input class="form-control is-invalid" id="email" type="text" name="email" placeholder="Email"
+                formControlName="email">
+
+              <div *ngIf="submitted && myForm.email.errors" class="invalid-feedback">
+                <div *ngIf="myForm.email.errors.required">*Email obligatoire</div>
+                <div *ngIf="myForm.email.errors.email">*L'email doit être une adresse e-mail valide</div>
+              </div>
+            </div>
+            
+            <div class="form-group is-invalid">
+              <input class="form-control" id="username" type="text" name="username" placeholder="Nom d'utilisateur"
+                formControlName="username" />
+              <div *ngIf="submitted && myForm.username.errors" class="invalid-feedback">
+                <div *ngIf="myForm.username.errors.required">*Nom d'utilisateur obligatoire</div>
+              </div>
+
+            </div>
+            <div class="form-group is-invalid">
+              <input class="form-control" id="password" type="password" name="password" placeholder="Mot de passe"
+                formControlName="password" />
+
+              <div *ngIf="submitted && myForm.password.errors" class="invalid-feedback">
+                <div *ngIf="myForm.password.errors.required">*Mot de passe obligatoire</div>
+                <div *ngIf="myForm.password.errors.minlength">*Le mot de passe doit être au moins de 6 caractères</div>
+
+              </div>
+
+            </div>
+            <div class="form-group">
+              <button class="btn btn-block btn-round btn-b" type="submit">Enregistrer</button>
+            </div>
+            <div class="button-row">
+              <a class="text-link"   >Vous avez déjà un compte ? </a>
+  
+            </div>
+            <a class="text-link" routerLink='/authentification/login' routerLinkActive='active'  >Connectez-vous !</a>
+    
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
